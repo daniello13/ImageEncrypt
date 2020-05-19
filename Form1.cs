@@ -87,10 +87,18 @@ namespace ImageEncrypt {
 				Array.Copy(bytes, 0, result, tmp, ost);
 			}
 			saveFileDialog1.DefaultExt = Extension;
-			BinaryWriter bw1 = new BinaryWriter(new FileStream("decrypted"+Extension, FileMode.Create));
-			bw1.Write(result);
-			bw1.Close();
-			pictureBox2.Image = Image.FromStream(new FileStream("decrypted" + Extension, FileMode.Open));
+			try
+			{
+				pictureBox2.Image = null;
+				BinaryWriter bw1 = new BinaryWriter(new FileStream("decrypted" + Extension, FileMode.Create));
+				bw1.Write(result);
+				bw1.Close();
+				pictureBox2.Image = Image.FromStream(new FileStream("decrypted" + Extension, FileMode.Open));
+			}
+			catch (Exception w){
+
+			}
+			
 
 			if (saveFileDialog1.ShowDialog() == DialogResult.OK)
 			{
