@@ -24,6 +24,11 @@
 		/// </summary>
 		private void InitializeComponent() {
             this.DecryptPage = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.Decrypt = new System.Windows.Forms.Button();
+            this.Loader = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.EncryptPage = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -33,18 +38,13 @@
             this.BtnLoad = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.Decrypt = new System.Windows.Forms.Button();
-            this.Loader = new System.Windows.Forms.Button();
             this.DecryptPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.EncryptPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumericPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // DecryptPage
@@ -61,6 +61,61 @@
             this.DecryptPage.TabIndex = 1;
             this.DecryptPage.Text = "Дешифрование";
             this.DecryptPage.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(147, 338);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Число-пароль:";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(234, 334);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 7;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // Decrypt
+            // 
+            this.Decrypt.Location = new System.Drawing.Point(388, 334);
+            this.Decrypt.Name = "Decrypt";
+            this.Decrypt.Size = new System.Drawing.Size(120, 20);
+            this.Decrypt.TabIndex = 6;
+            this.Decrypt.Text = "Расшифровать";
+            this.Decrypt.UseVisualStyleBackColor = true;
+            this.Decrypt.Click += new System.EventHandler(this.Decrypt_Click);
+            // 
+            // Loader
+            // 
+            this.Loader.Location = new System.Drawing.Point(6, 334);
+            this.Loader.Name = "Loader";
+            this.Loader.Size = new System.Drawing.Size(112, 20);
+            this.Loader.TabIndex = 5;
+            this.Loader.Text = "Загрузить файл";
+            this.Loader.UseVisualStyleBackColor = true;
+            this.Loader.Click += new System.EventHandler(this.Loader_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.InitialImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(505, 316);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // tabControl1
             // 
@@ -146,61 +201,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(505, 316);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(147, 338);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Число-пароль:";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(234, 334);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 7;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // Decrypt
-            // 
-            this.Decrypt.Location = new System.Drawing.Point(388, 334);
-            this.Decrypt.Name = "Decrypt";
-            this.Decrypt.Size = new System.Drawing.Size(120, 20);
-            this.Decrypt.TabIndex = 6;
-            this.Decrypt.Text = "Расшифровать";
-            this.Decrypt.UseVisualStyleBackColor = true;
-            this.Decrypt.Click += new System.EventHandler(this.Decrypt_Click);
-            // 
-            // Loader
-            // 
-            this.Loader.Location = new System.Drawing.Point(6, 334);
-            this.Loader.Name = "Loader";
-            this.Loader.Size = new System.Drawing.Size(112, 20);
-            this.Loader.TabIndex = 5;
-            this.Loader.Text = "Загрузить файл";
-            this.Loader.UseVisualStyleBackColor = true;
-            this.Loader.Click += new System.EventHandler(this.button2_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,13 +211,13 @@
             this.Text = "ImageEncrypt";
             this.DecryptPage.ResumeLayout(false);
             this.DecryptPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.EncryptPage.ResumeLayout(false);
             this.EncryptPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumericPass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
 		}
